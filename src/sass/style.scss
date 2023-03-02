@@ -1,0 +1,96 @@
+html {
+  font-family: "Poppins", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 1800px;
+  margin: 50px auto;
+  padding: 0px 20px;
+}
+
+.time-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  flex-direction: column;
+
+  & form {
+    flex-grow: 1;
+  }
+
+  & :nth-child(2) {
+    flex-basis: 40%;
+  }
+
+  @media (min-width: 1129px) {
+    flex-direction: row;
+  }
+}
+
+.time-hours,
+.time-comment {
+  display: flex;
+  flex-direction: column;
+
+  * {
+    margin: 10px 0px;
+  }
+
+  & input {
+    padding: 15px;
+    border-radius: 5px;
+    border: 2px solid lightgray;
+  }
+}
+
+.time-records {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & * {
+    margin: 20px 0px;
+  }
+}
+
+hr {
+  border: 1px solid #f2f2f2;
+  width: 100%;
+  margin-bottom: 70px;
+}
+
+.cta {
+  padding: 15px;
+  border-radius: 20px;
+  border: none;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  color: #fff;
+  font-weight: 700;
+
+  &:hover {
+    filter: brightness(0.9);
+    cursor: pointer;
+  }
+}
+
+.cta--standard {
+  @extend .cta;
+  background-color: lightgreen;
+}
+
+.cta--alt {
+  @extend .cta;
+  background-color: lightcoral;
+  width: 100px;
+}
+
+.alert {
+  padding: 10px;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
