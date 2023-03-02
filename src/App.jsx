@@ -6,6 +6,7 @@ function App() {
   const [hours, setHours] = useState("");
   const [comment, setComment] = useState("");
   const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleHoursChange = (event) => {
     setHours(event.target.value);
@@ -41,6 +42,12 @@ function App() {
     } else {
       setError(false);
     }
+
+    if (getTotalHours() > 0 && getTotalHours() < 100) {
+      setSuccess(true);
+    } else {
+      setSuccess(false);
+    }
   }, [getTotalHours]);
 
   return (
@@ -56,7 +63,9 @@ function App() {
             <label>Kommentar:</label>
             <input type="text" value={comment} onChange={handleCommentChange} />
           </div>
-          <button className="cta--standard">Save</button>
+          <button disabled={hours.length < 1 || comment.length < 1} className="cta--standard">
+            Save
+          </button>
         </form>
         <div>
           <h2>Time registreringer</h2>
@@ -75,6 +84,7 @@ function App() {
           ))}
           <h2>Totale timer: {getTotalHours()}</h2>
           <div className={error ? "alert" : ""}>{error ? "Du har for mange timer! Max 100 timer" : ""}</div>
+          <div className={success ? "success" : ""}>{success ? "Du er innenfor max antall timer!" : ""}</div>
         </div>
       </div>
     </>
