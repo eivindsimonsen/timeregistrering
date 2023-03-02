@@ -65,7 +65,7 @@ function App() {
         <form onSubmit={handleSave}>
           <div className="time-hours">
             <label>Timer:</label>
-            <input type="number" value={hours} onChange={handleHoursChange} />
+            <input type="number" value={hours} onChange={handleHoursChange} step="1" />
           </div>
           <div className="time-comment">
             <label>Kommentar:</label>
@@ -81,7 +81,7 @@ function App() {
             <>
               <div className="time-records" key={index}>
                 <p>
-                  {record.hours} hours - {record.comment}
+                  {parseInt(record.hours)} hours - {record.comment}
                 </p>
                 <button className="cta--alt" onClick={() => handleDelete(index)}>
                   Slett
