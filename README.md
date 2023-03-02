@@ -1,11 +1,13 @@
 ### Timeregistrering
 
-#### av Eivind Simonsen
+# av Eivind Simonsen
 
-##### For å kjøre prosjektet
+### For å kjøre prosjektet
 
 `npm install`
 
-deretter
+### deretter
 
 `npm run dev`
+
+### Terminalen gi deg en link til localhost
