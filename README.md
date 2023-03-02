@@ -1,6 +1,6 @@
-### Timeregistrering
+# Timeregistrering
 
-# av Eivind Simonsen
+## av Eivind Simonsen
 
 ### For å kjøre prosjektet
 
